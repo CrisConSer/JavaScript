@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"/>
+<title>Cálculo de Notas</title>
+<script>
+    
+function calculanota(notaexamen, porcentajeexamen, notatrabajos, porcentajetrabajos)
+{
+let nexamen = parseInt(notaexamen);
+let porcexamen = parseInt(porcentajeexamen);
+let nottrabajos = parseInt(notatrabajos);
+let porctrabajos = parseInt(porcentajetrabajos);  
+
+notatotal = (nexamen*(0.01)*porcexamen) + (nottrabajos*(0.01)*porctrabajos);
+//document.write(`<p> Este es el valor de resultado: ${notatotal} <br></p>`);
+//document.getElementById("resultado").innerHTML = ${notatotal};
+document.getElementById("salida").innerHTML = notatotal;
+}
+</script>
+</head>
+<body>
+    
+<form name="fdatos">
+    <h1> CALCULO DE NOTAS</h1>
+    
+Nota examen <input type="text" size="10" name="nota_examen"/></br></br>
+Porcentaje (ej: 80) <input type="text" size="10" name="porcentaje_examen"/></br></br>
+Nota trabajo <input type="text" size="10" name="nota_trabajo"/></br></br>
+Porcentaje (ej: 30) <input type="text" size="10" name="porcentaje_trabajo"/></br></br>
+<!--Resultado <input type="text" size="10" name="resultado"/></br> -->
+<input id="pideal" type="button" value="Calcular"
+onclick="calculanota(document.fdatos.nota_examen.value,document.fdatos.porcentaje_examen.value,document.fdatos.nota_trabajo.value,document.fdatos.porcentaje_trabajo.value)" />
+<input type="reset" value="Reset" />
+</form>
+Resultado nota:<div id ="salida"></div>
+</body>
+</html>
